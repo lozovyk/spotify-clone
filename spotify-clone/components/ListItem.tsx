@@ -11,9 +11,9 @@ interface ListItemProps {
 }
 
 const ListItem: React.FC<ListItemProps> = ({
-    image,
-    name,
-    href
+                                               image,
+                                               name,
+                                               href
                                            }) => {
     const router = useRouter();
 
@@ -22,9 +22,9 @@ const ListItem: React.FC<ListItemProps> = ({
         router.push(href)
     }
     return (
-            <button
-                onClick={onClick}
-                className="
+        <button
+            onClick={onClick}
+            className="
                 relative
                 group
                 flex
@@ -38,19 +38,19 @@ const ListItem: React.FC<ListItemProps> = ({
                 transition
                 pr-4
               "
-            >
-                <div className="relative min-h-[64px] min-w-[64px]">
-                    <Image
-                        className="object-cover"
-                        fill
-                        src={image}
-                        alt="Image"
-                    />
-                </div>
-                <p className="font-medium py-5 truncate">
-                    {name}
-                </p>
-                <div className="
+        >
+            <div className="relative min-h-[64px] min-w-[64px]">
+                <Image
+                    className="object-cover"
+                    fill
+                    src={image}
+                    alt="Image"
+                />
+            </div>
+            <p className="font-medium py-5 truncate">
+                {name}
+            </p>
+            <div className="
                     absolute
                     transition
                     opacity-0
@@ -65,9 +65,9 @@ const ListItem: React.FC<ListItemProps> = ({
                     group-hover:opacity-100
                     hover:scale-110
                 ">
-                    <FaPlay className="text-black" />
-                </div>
-            </button>
+                <FaPlay className="text-black"/>
+            </div>
+        </button>
     );
 };
 

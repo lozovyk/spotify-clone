@@ -42,9 +42,9 @@ const Header: React.FC<HeaderProps> = ({
                 gap-x-2
                 items-center
             ">
-                <button
-                    onClick={() => router.back()}
-                    className="
+                    <button
+                        onClick={() => router.back()}
+                        className="
                     rounded-full
                     bg-black
                     flex
@@ -53,11 +53,11 @@ const Header: React.FC<HeaderProps> = ({
                     hover:opacity-75
                     transition
                 ">
-                    <RxCaretLeft className="text-white" size={35}/>
-                </button>
-                <button
-                    onClick={() => router.forward()}
-                    className="
+                        <RxCaretLeft className="text-white" size={35}/>
+                    </button>
+                    <button
+                        onClick={() => router.forward()}
+                        className="
                     rounded-full
                     bg-black
                     flex
@@ -67,7 +67,7 @@ const Header: React.FC<HeaderProps> = ({
                     transition
                 ">
                         <RxCaretRight className="text-white" size={35}/>
-                </button>
+                    </button>
                 </div>
                 <div className="flex md:hidden gap-x-2 items-center">
                     <button className="
@@ -96,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({
                     </button>
                 </div>
                 <div
-                className="
+                    className="
                     flex
                     justify-between
                     items-center
