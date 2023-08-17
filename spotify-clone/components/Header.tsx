@@ -1,50 +1,54 @@
-"use client";
+'use client';
 
-import {useRouter} from "next/navigation";
-import {twMerge} from "tailwind-merge";
-import {RxCaretLeft, RxCaretRight} from "react-icons/rx";
-import {HiHome} from "react-icons/hi";
-import {BiSearch} from "react-icons/bi";
-import Button from "@/components/Button";
+import { useRouter } from 'next/navigation';
+import { twMerge } from 'tailwind-merge';
+import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
+import { HiHome } from 'react-icons/hi';
+import { BiSearch } from 'react-icons/bi';
+import Button from '@/components/Button';
 
 interface HeaderProps {
-    children: React.ReactNode;
-    className?: string;
+  children: React.ReactNode;
+  className?: string;
 }
 
-const Header: React.FC<HeaderProps> = ({
-                                           children,
-                                           className
-                                       }) => {
-    const router = useRouter();
-    const handleLogout = () => {
-        //TODO: Handle logout in the future
-    }
-    return (
-        <div className={twMerge(`
+const Header: React.FC<HeaderProps> = ({ children, className }) => {
+  const router = useRouter();
+  const handleLogout = () => {
+    //TODO: Handle logout in the future
+  };
+  return (
+    <div
+      className={twMerge(
+        `
             h-fit
             bg-gradient-to-b
             from-emerald-900
             p-6
         `,
-            className
-        )}>
-            <div className="
+        className,
+      )}
+    >
+      <div
+        className="
                 w-full
                 mb-4
                 flex
                 items-center
                 justify-between
-            ">
-                <div className="
+            "
+      >
+        <div
+          className="
                 hidden
                 md:flex
                 gap-x-2
                 items-center
-            ">
-                    <button
-                        onClick={() => router.back()}
-                        className="
+            "
+        >
+          <button
+            onClick={() => router.back()}
+            className="
                     rounded-full
                     bg-black
                     flex
@@ -52,12 +56,13 @@ const Header: React.FC<HeaderProps> = ({
                     justify-center
                     hover:opacity-75
                     transition
-                ">
-                        <RxCaretLeft className="text-white" size={35}/>
-                    </button>
-                    <button
-                        onClick={() => router.forward()}
-                        className="
+                "
+          >
+            <RxCaretLeft className="text-white" size={35} />
+          </button>
+          <button
+            onClick={() => router.forward()}
+            className="
                     rounded-full
                     bg-black
                     flex
@@ -65,12 +70,14 @@ const Header: React.FC<HeaderProps> = ({
                     justify-center
                     hover:opacity-75
                     transition
-                ">
-                        <RxCaretRight className="text-white" size={35}/>
-                    </button>
-                </div>
-                <div className="flex md:hidden gap-x-2 items-center">
-                    <button className="
+                "
+          >
+            <RxCaretRight className="text-white" size={35} />
+          </button>
+        </div>
+        <div className="flex md:hidden gap-x-2 items-center">
+          <button
+            className="
                         rounded-full
                         p-2
                         flex
@@ -79,10 +86,12 @@ const Header: React.FC<HeaderProps> = ({
                         justify-center
                         hover:opacity-75
                         transition
-                    ">
-                        <HiHome className="text-black" size={20}/>
-                    </button>
-                    <button className="
+                    "
+          >
+            <HiHome className="text-black" size={20} />
+          </button>
+          <button
+            className="
                         rounded-full
                         p-2
                         flex
@@ -91,53 +100,50 @@ const Header: React.FC<HeaderProps> = ({
                         justify-center
                         hover:opacity-75
                         transition
-                    ">
-                        <BiSearch className="text-black" size={20}/>
-                    </button>
-                </div>
-                <div
-                    className="
+                    "
+          >
+            <BiSearch className="text-black" size={20} />
+          </button>
+        </div>
+        <div
+          className="
                     flex
                     justify-between
                     items-center
                     gap-x-4
                 "
-                >
-                    <>
-                        <div>
-                            <Button
-                                onClick={() => {
-
-                                }}
-                                className="
+        >
+          <>
+            <div>
+              <Button
+                onClick={() => {}}
+                className="
                                 bg-transparent
                                 text-neutral-300
                                 font-medium
                                 "
-                            >
-                                Sign Up
-                            </Button>
-                        </div>
-                        <div>
-                            <Button
-                                onClick={() => {
-
-                                }}
-                                className="
+              >
+                Sign Up
+              </Button>
+            </div>
+            <div>
+              <Button
+                onClick={() => {}}
+                className="
                                 bg-white
                                 px-6
                                 py-2
                                 "
-                            >
-                                Log In
-                            </Button>
-                        </div>
-                    </>
-                </div>
+              >
+                Log In
+              </Button>
             </div>
-            {children}
+          </>
         </div>
-    );
+      </div>
+      {children}
+    </div>
+  );
 };
 
 export default Header;
